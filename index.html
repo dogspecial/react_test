@@ -101,17 +101,16 @@
       return (
         <div>
           <h1>Super Converter</h1>
-          <select onChange={onSelect}>
+          <select value={index} onChange={onSelect}>
             <option value="-1">Select Unit</option>
             <option value="0">Minutes & Hours</option>
             <option value="1">Km & Miles</option>
           </select>
           <hr />
-          {index === "0" ? (
-            <MinutesToHours />
-          ) : index === "1" ? (
-            <KmToMiles />
-          ) : null}
+          {
+            index === "0" ? <MinutesToHours /> : 
+            index === "1" ? <KmToMiles /> : 'Please Select'
+          }
         </div>
       );
     }
